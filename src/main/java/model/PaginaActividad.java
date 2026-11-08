@@ -4,15 +4,31 @@
  */
 package model;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aaron
  */
 public class PaginaActividad extends Pagina{
+    
+    //Arreglos unidimensionales
+    
+    
+
+    public PaginaActividad(String titulo, String contenido, int numPagina) {
+        super(titulo, contenido, numPagina);
+    }
+    
+    
 
     @Override
     public void mostrarContenido() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        JOptionPane.showMessageDialog(null,"---Información página---"
+                + "Titulo de la página: "+getTitulo()
+                + "Número de página: "+getNumPagina()
+                + "Contenido de página: "+getContenido()
+                + "-------------------");
     }
     
 }
