@@ -4,8 +4,6 @@
  */
 package model;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author aaron
@@ -17,14 +15,10 @@ public class PaginaInformativa extends Pagina{
     }
     
     
-
     @Override
-    public void mostrarContenido() {
-        JOptionPane.showMessageDialog(null,"---Información página---"
-                + "Titulo de la página: "+getTitulo()
-                + "Número de página: "+getNumPagina()
-                + "Contenido de página: "+getContenido()
-                + "-------------------");
+    public String mostrarContenido() {
+        return getContenido()+ "\n(Página "+getNumPagina()+")";
+        
     }
-    
+  
 }

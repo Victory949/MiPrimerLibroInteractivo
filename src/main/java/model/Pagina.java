@@ -50,6 +50,6 @@ public abstract class Pagina {
     }
     
     //METODOS
-    public abstract void mostrarContenido();
+    public abstract String mostrarContenido();
      
 }
