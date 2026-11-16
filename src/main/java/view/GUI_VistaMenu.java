@@ -37,97 +37,81 @@ public class GUI_VistaMenu extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(682, 403));
 
-        pnlFondo.setBackground(new java.awt.Color(51, 102, 255));
+        pnlFondo.setBackground(new java.awt.Color(51, 51, 51));
+        pnlFondo.setForeground(new java.awt.Color(51, 51, 51));
+        pnlFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitulo.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        lblTitulo.setText("APRENDIZAJE JAVA");
+        lblTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/APRENDIZAJE JAVA.png"))); // NOI18N
+        pnlFondo.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
-        lblSubtitulo.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
-        lblSubtitulo.setText("Aprende * Practica * Prgresa");
+        lblSubtitulo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblSubtitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblSubtitulo.setText("Aprende * Practica * Progresa");
+        pnlFondo.add(lblSubtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
 
         btnIniciar.setBackground(new java.awt.Color(0, 51, 153));
         btnIniciar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnIniciar.setText("Iniciar Lectura");
+        btnIniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Iniciar Lectura.png"))); // NOI18N
         btnIniciar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnIniciar.setBorderPainted(false);
+        btnIniciar.setContentAreaFilled(false);
+        btnIniciar.addActionListener(this::btnIniciarActionPerformed);
+        pnlFondo.add(btnIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 167, 43));
 
-        jScrollPane1.setBackground(new java.awt.Color(51, 51, 255));
+        jScrollPane1.setBackground(new java.awt.Color(102, 102, 102));
         jScrollPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(0, 102, 204));
+        jTextArea1.setBackground(new java.awt.Color(102, 102, 102));
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
-        jTextArea1.setText("Libro interactivo educativo para aprender y practicar estructuras de control condicionales (if, if-else y switch).");
+        jTextArea1.setText("Libro interactivo educativo para aprender y practicar estructuras de \ncontrol de flujo en Java de manera clara, visual y progresiva.");
         jScrollPane1.setViewportView(jTextArea1);
+
+        pnlFondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 410, 70));
 
         btnSalir.setBackground(new java.awt.Color(102, 102, 255));
         btnSalir.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnSalir.setText("Salir");
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Salir.png"))); // NOI18N
         btnSalir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        javax.swing.GroupLayout pnlFondoLayout = new javax.swing.GroupLayout(pnlFondo);
-        pnlFondo.setLayout(pnlFondoLayout);
-        pnlFondoLayout.setHorizontalGroup(
-            pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFondoLayout.createSequentialGroup()
-                .addGroup(pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlFondoLayout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addGroup(pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTitulo, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFondoLayout.createSequentialGroup()
-                                .addComponent(btnIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(90, 90, 90))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFondoLayout.createSequentialGroup()
-                                .addComponent(lblSubtitulo)
-                                .addGap(53, 53, 53))))
-                    .addGroup(pnlFondoLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlFondoLayout.createSequentialGroup()
-                        .addGap(268, 268, 268)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(115, Short.MAX_VALUE))
-        );
-        pnlFondoLayout.setVerticalGroup(
-            pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFondoLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblSubtitulo)
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(btnIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalir)
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
+        btnSalir.setBorderPainted(false);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.setDefaultCapable(false);
+        btnSalir.addActionListener(this::btnSalirActionPerformed);
+        pnlFondo.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 116, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pnlFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIniciarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
