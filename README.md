@@ -34,21 +34,33 @@ de seleccion, puede realizar hasta 3 intentos y consultar el historial de sus re
   4. Ejecutar la calse main.principal (clic derecho -> Run file) o usar el boton Run Project
 
 ----------Clases principales------------
-model
--'Pagina': clase abstracta con titulo, contenido y numero de pagina; declara 'mostrarContenido()',
--'PaginaInformativa': hereda de 'Pagina': pagina educativa con su ejemplo de codigo
--'PaginaActividad': hereda de 'Pagina; pagina con las preguntas de la actividad
--Preguntas': enunciado y opciones de una pregunta
--'Elemento': el libro, administra un 'ArrayList<Pagina>
--'Actividades': verifica respuestas, calcula aciertos y guarda los intentos en una matriz 3x3
 
-view
+//model//
+
+-'Pagina': clase abstracta con titulo, contenido y numero de pagina; declara 'mostrarContenido() 
+
+-'PaginaInformativa': hereda de 'Pagina': pagina educativa con su ejemplo de codigo 
+
+-'PaginaActividad': hereda de 'Pagina; pagina con las preguntas de la actividad 
+
+-Preguntas': enunciado y opciones de una pregunta 
+
+-'Elemento': el libro, administra un 'ArrayList<Pagina> 
+
+-'Actividades': verifica respuestas, calcula aciertos y guarda los intentos en una matriz 3x3 
+
+//view//
+
 -'GUI_VistaMenu': portada del libro
+
 -'GUI_VistaInformacion': ventana de lectura, actividad y resultados
 
-controlador
+//controlador//
+
 -'controladorSistema': abre el menu y crea el libro
+
 -'controladorLibro': maneja la navegacion la actividad y los resultados
 
-main
+//main//
+
 -'Principal': inicia la aplicacion
