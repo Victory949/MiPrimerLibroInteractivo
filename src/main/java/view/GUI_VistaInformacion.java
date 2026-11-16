@@ -33,6 +33,7 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         pnlNavegación = new javax.swing.JPanel();
         btnMenu = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
+        btnAnterior = new javax.swing.JButton();
         pnlEncabezado = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         lblSubtitulo = new javax.swing.JLabel();
@@ -49,19 +50,25 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
 
-        pnlNavegación.setBackground(new java.awt.Color(255, 255, 255));
+        pnlNavegación.setBackground(new java.awt.Color(51, 51, 51));
 
-        btnMenu.setBackground(new java.awt.Color(102, 102, 255));
+        btnMenu.setBackground(new java.awt.Color(0, 153, 204));
         btnMenu.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         btnMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnMenu.setText("Volver Menu");
         btnMenu.addActionListener(this::btnMenuActionPerformed);
 
-        btnSiguiente.setBackground(new java.awt.Color(102, 102, 255));
+        btnSiguiente.setBackground(new java.awt.Color(0, 153, 204));
         btnSiguiente.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         btnSiguiente.setForeground(new java.awt.Color(255, 255, 255));
         btnSiguiente.setText("Siguiente");
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
+
+        btnAnterior.setBackground(new java.awt.Color(0, 153, 204));
+        btnAnterior.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        btnAnterior.setForeground(new java.awt.Color(255, 255, 255));
+        btnAnterior.setText("Anterior");
+        btnAnterior.addActionListener(this::btnAnteriorActionPerformed);
 
         javax.swing.GroupLayout pnlNavegaciónLayout = new javax.swing.GroupLayout(pnlNavegación);
         pnlNavegación.setLayout(pnlNavegaciónLayout);
@@ -70,9 +77,11 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
             .addGroup(pnlNavegaciónLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(btnMenu)
+                .addGap(31, 31, 31)
+                .addComponent(btnAnterior)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSiguiente)
-                .addContainerGap(601, Short.MAX_VALUE))
+                .addContainerGap(542, Short.MAX_VALUE))
         );
         pnlNavegaciónLayout.setVerticalGroup(
             pnlNavegaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,18 +89,19 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(pnlNavegaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMenu)
-                    .addComponent(btnSiguiente))
+                    .addComponent(btnSiguiente)
+                    .addComponent(btnAnterior))
                 .addGap(15, 15, 15))
         );
 
-        pnlEncabezado.setBackground(new java.awt.Color(51, 51, 255));
+        pnlEncabezado.setBackground(new java.awt.Color(0, 153, 204));
 
         lblTitulo.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         lblTitulo.setText("APRENDIZAJE JAVA");
 
         lblSubtitulo.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         lblSubtitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblSubtitulo.setText("CAPITULO 1: Estructura If");
+        lblSubtitulo.setText("CAPITULO");
 
         javax.swing.GroupLayout pnlEncabezadoLayout = new javax.swing.GroupLayout(pnlEncabezado);
         pnlEncabezado.setLayout(pnlEncabezadoLayout);
@@ -105,7 +115,7 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                     .addGroup(pnlEncabezadoLayout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(lblSubtitulo)))
-                .addContainerGap(423, Short.MAX_VALUE))
+                .addContainerGap(711, Short.MAX_VALUE))
         );
         pnlEncabezadoLayout.setVerticalGroup(
             pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,22 +124,22 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                 .addComponent(lblTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblSubtitulo)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        pnlContenido.setBackground(new java.awt.Color(153, 204, 255));
+        pnlContenido.setBackground(new java.awt.Color(51, 51, 51));
 
-        pnlEjemplo.setBackground(new java.awt.Color(51, 51, 255));
+        pnlEjemplo.setBackground(new java.awt.Color(51, 51, 51));
 
         lblEjemplo.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         lblEjemplo.setForeground(new java.awt.Color(255, 255, 255));
         lblEjemplo.setText("Ejemplo Codigo");
 
-        jTextArea2.setBackground(new java.awt.Color(102, 153, 255));
+        jTextArea2.setBackground(new java.awt.Color(153, 153, 153));
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setText("int edad = 20;\nif (edad >= 18)\n{\nSystem.out.println(\"Es mayor de edad\");\n}");
+        jTextArea2.setText("ejemplo");
         jScrollPane2.setViewportView(jTextArea2);
 
         javax.swing.GroupLayout pnlEjemploLayout = new javax.swing.GroupLayout(pnlEjemplo);
@@ -143,7 +153,7 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                         .addComponent(lblEjemplo))
                     .addGroup(pnlEjemploLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlEjemploLayout.setVerticalGroup(
@@ -163,7 +173,7 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("La estructura if permite ejecutar un bloque de instrucciones solamente cuando una condicion\nes verdadera. Primero, Java evalua la condicion que se encuentra entre parentesis. Si el resultado es true,\nejecuta las instrucciones dentro de las llaves. Si es false, omite ese bloque y continua con el resto del programa.\nSe utiliza cuando necesitamos que el programa tome una decision a partir de una condicion.");
+        jTextArea1.setText("EXPLICACION");
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout pnlExplicacionLayout = new javax.swing.GroupLayout(pnlExplicacion);
@@ -176,17 +186,18 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lblPregunta))
                     .addGroup(pnlExplicacionLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(58, 58, 58)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         pnlExplicacionLayout.setVerticalGroup(
             pnlExplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlExplicacionLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblPregunta)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
@@ -198,7 +209,7 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                 .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pnlEjemplo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnlExplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         pnlContenidoLayout.setVerticalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +225,7 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlNavegación, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,7 +237,7 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 374, Short.MAX_VALUE))
+                .addGap(0, 408, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(445, 445, 445)
@@ -246,9 +257,9 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
-    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+    private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnMenuActionPerformed
+    }//GEN-LAST:event_btnAnteriorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,6 +309,7 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAnterior;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JScrollPane jScrollPane1;
