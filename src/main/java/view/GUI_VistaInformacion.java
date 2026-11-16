@@ -20,6 +20,9 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
     public GUI_VistaInformacion() {
         initComponents();
     }
+    
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
