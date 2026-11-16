@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -54,6 +56,7 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         btnMenu.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         btnMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnMenu.setText("Volver Menu");
+        btnMenu.addActionListener(this::btnMenuActionPerformed);
 
         btnSiguiente.setBackground(new java.awt.Color(0, 153, 204));
         btnSiguiente.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
@@ -281,6 +284,28 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new GUI_VistaInformacion().setVisible(true));
+    }
+    
+    public void addLecturaListener(ActionListener listener)
+    {
+        //btnAnterior.setActionCommand("ANTERIOR");//el boton aun no existe en la interfas pero creare el comando para despues
+        btnSiguiente.setActionCommand("SIGUIENTE");
+        btnMenu.setActionCommand("MENU");
+        
+        //btnAnterior.addActionListener(listener);//lo mismo, aun no existe
+        btnSiguiente.addActionListener(listener);
+        btnMenu.addActionListener(listener);
+    }
+    
+    public void mostrarPagina(String titulo, String contenido)
+    {
+        lblSubtitulo.setText(titulo);
+        jTextArea1.setText(contenido);
+    }
+    
+    public void mostrarMensaje(String mensaje)
+    {
+        JOptionPane.showMessageDialog(null, mensaje);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

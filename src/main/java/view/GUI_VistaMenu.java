@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -136,6 +137,16 @@ public class GUI_VistaMenu extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new GUI_VistaMenu().setVisible(true));
+    }
+    
+    public void addMenuListener(ActionListener listener)
+    {
+        btnIniciar.setActionCommand("INICIAR");
+        btnSalir.setActionCommand("SALIR");
+        
+        btnIniciar.addActionListener(listener);
+        btnSalir.addActionListener(listener);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

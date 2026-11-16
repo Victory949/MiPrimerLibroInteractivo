@@ -13,22 +13,22 @@ import javax.swing.JOptionPane;
 public class PaginaActividad extends Pagina{
     
     //Arreglos unidimensionales
-    
+    private Preguntas[] preguntas;
     
 
-    public PaginaActividad(String titulo, String contenido, int numPagina) {
+    public PaginaActividad(String titulo, String contenido, int numPagina, Preguntas[] preguntas) {
         super(titulo, contenido, numPagina);
+        this.preguntas = preguntas;
     }
     
-    
+    public Preguntas[] getPreguntas()
+    {
+        return preguntas;
+    }
 
     @Override
-    public void mostrarContenido() {
-        JOptionPane.showMessageDialog(null,"---Información página---"
-                + "Titulo de la página: "+getTitulo()
-                + "Número de página: "+getNumPagina()
-                + "Contenido de página: "+getContenido()
-                + "-------------------");
+    public String mostrarContenido() {
+        return getContenido()+" Preguntas: "+preguntas.length;
     }
     
 }
