@@ -51,5 +51,12 @@ public abstract class Pagina {
     
     //METODOS
     public abstract String mostrarContenido();
+    
+    public String getEjemplo()
+{
+    return "";
+}
      
 }
+
+

@@ -35,8 +35,10 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
 
         pnlNavegación = new javax.swing.JPanel();
         btnMenu = new javax.swing.JButton();
-        btnSiguiente = new javax.swing.JButton();
+        btnResultados = new javax.swing.JButton();
         btnAnterior = new javax.swing.JButton();
+        btnSiguiente = new javax.swing.JButton();
+        btnActividad = new javax.swing.JButton();
         pnlEncabezado = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         lblSubtitulo = new javax.swing.JLabel();
@@ -49,6 +51,10 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         lblPregunta = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        btnSiguiente1 = new javax.swing.JButton();
+        btnOpcion1 = new javax.swing.JButton();
+        btnOpcion3 = new javax.swing.JButton();
+        btnOpcion2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
@@ -61,11 +67,11 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         btnMenu.setText("Volver Menu");
         btnMenu.addActionListener(this::btnMenuActionPerformed);
 
-        btnSiguiente.setBackground(new java.awt.Color(0, 153, 204));
-        btnSiguiente.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
-        btnSiguiente.setForeground(new java.awt.Color(255, 255, 255));
-        btnSiguiente.setText("Siguiente");
-        btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
+        btnResultados.setBackground(new java.awt.Color(0, 153, 204));
+        btnResultados.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        btnResultados.setForeground(new java.awt.Color(255, 255, 255));
+        btnResultados.setText("Resultados");
+        btnResultados.addActionListener(this::btnResultadosActionPerformed);
 
         btnAnterior.setBackground(new java.awt.Color(0, 153, 204));
         btnAnterior.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
@@ -73,27 +79,49 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         btnAnterior.setText("Anterior");
         btnAnterior.addActionListener(this::btnAnteriorActionPerformed);
 
+        btnSiguiente.setBackground(new java.awt.Color(0, 153, 204));
+        btnSiguiente.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        btnSiguiente.setForeground(new java.awt.Color(255, 255, 255));
+        btnSiguiente.setText("Siguiente");
+        btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
+
+        btnActividad.setBackground(new java.awt.Color(0, 153, 204));
+        btnActividad.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        btnActividad.setForeground(new java.awt.Color(255, 255, 255));
+        btnActividad.setText("Actividad");
+        btnActividad.addActionListener(this::btnActividadActionPerformed);
+
         javax.swing.GroupLayout pnlNavegaciónLayout = new javax.swing.GroupLayout(pnlNavegación);
         pnlNavegación.setLayout(pnlNavegaciónLayout);
         pnlNavegaciónLayout.setHorizontalGroup(
             pnlNavegaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlNavegaciónLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(btnMenu)
-                .addGap(31, 31, 31)
-                .addComponent(btnAnterior)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSiguiente)
-                .addContainerGap(542, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(pnlNavegaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlNavegaciónLayout.createSequentialGroup()
+                        .addComponent(btnMenu)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnResultados))
+                    .addGroup(pnlNavegaciónLayout.createSequentialGroup()
+                        .addComponent(btnAnterior)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSiguiente)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnActividad)))
+                .addContainerGap(434, Short.MAX_VALUE))
         );
         pnlNavegaciónLayout.setVerticalGroup(
             pnlNavegaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlNavegaciónLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(pnlNavegaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAnterior)
+                    .addComponent(btnSiguiente)
+                    .addComponent(btnActividad))
+                .addGap(18, 18, 18)
                 .addGroup(pnlNavegaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMenu)
-                    .addComponent(btnSiguiente)
-                    .addComponent(btnAnterior))
+                    .addComponent(btnResultados))
                 .addGap(15, 15, 15))
         );
 
@@ -118,7 +146,7 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                     .addGroup(pnlEncabezadoLayout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(lblSubtitulo)))
-                .addContainerGap(711, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlEncabezadoLayout.setVerticalGroup(
             pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,14 +178,11 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         pnlEjemploLayout.setHorizontalGroup(
             pnlEjemploLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEjemploLayout.createSequentialGroup()
-                .addGroup(pnlEjemploLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlEjemploLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(lblEjemplo))
-                    .addGroup(pnlEjemploLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(lblEjemplo))
+            .addGroup(pnlEjemploLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlEjemploLayout.setVerticalGroup(
             pnlEjemploLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,8 +190,8 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblEjemplo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lblPregunta.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -190,8 +215,8 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                         .addComponent(lblPregunta))
                     .addGroup(pnlExplicacionLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlExplicacionLayout.setVerticalGroup(
             pnlExplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,54 +228,93 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        btnSiguiente1.setBackground(new java.awt.Color(0, 153, 204));
+        btnSiguiente1.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        btnSiguiente1.setForeground(new java.awt.Color(255, 255, 255));
+        btnSiguiente1.setText("Siguiente");
+        btnSiguiente1.addActionListener(this::btnSiguiente1ActionPerformed);
+
+        btnOpcion1.setBackground(new java.awt.Color(0, 153, 204));
+        btnOpcion1.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        btnOpcion1.setForeground(new java.awt.Color(255, 255, 255));
+        btnOpcion1.setText("Opcion 1");
+        btnOpcion1.addActionListener(this::btnOpcion1ActionPerformed);
+
+        btnOpcion3.setBackground(new java.awt.Color(0, 153, 204));
+        btnOpcion3.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        btnOpcion3.setForeground(new java.awt.Color(255, 255, 255));
+        btnOpcion3.setText("Opcion 3");
+        btnOpcion3.addActionListener(this::btnOpcion3ActionPerformed);
+
+        btnOpcion2.setBackground(new java.awt.Color(0, 153, 204));
+        btnOpcion2.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        btnOpcion2.setForeground(new java.awt.Color(255, 255, 255));
+        btnOpcion2.setText("Opcion 2");
+        btnOpcion2.addActionListener(this::btnOpcion2ActionPerformed);
+
         javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
         pnlContenido.setLayout(pnlContenidoLayout);
         pnlContenidoLayout.setHorizontalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlContenidoLayout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlEjemplo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlExplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnOpcion1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnOpcion3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnOpcion2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pnlEjemplo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnlExplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(btnSiguiente1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlContenidoLayout.setVerticalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlContenidoLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(pnlExplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlEjemplo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnOpcion1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnOpcion2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnOpcion3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnlContenidoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlEjemplo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(btnSiguiente1))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(pnlNavegación, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(pnlContenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlNavegación, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlContenido, javax.swing.GroupLayout.PREFERRED_SIZE, 788, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 408, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(445, 445, 445)
-                    .addComponent(pnlNavegación, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(83, 83, 83)
-                    .addComponent(pnlContenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(64, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(pnlContenido, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlNavegación, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -263,6 +327,30 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
     private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAnteriorActionPerformed
+
+    private void btnActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActividadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActividadActionPerformed
+
+    private void btnResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnResultadosActionPerformed
+
+    private void btnSiguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSiguiente1ActionPerformed
+
+    private void btnOpcion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcion1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOpcion1ActionPerformed
+
+    private void btnOpcion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcion3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOpcion3ActionPerformed
+
+    private void btnOpcion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcion2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOpcion2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,19 +379,61 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
     
     public void addLecturaListener(ActionListener listener)
     {
-        //btnAnterior.setActionCommand("ANTERIOR");//el boton aun no existe en la interfas pero creare el comando para despues
+        btnAnterior.setActionCommand("ANTERIOR");//el boton aun no existe en la interfas pero creare el comando para despues
         btnSiguiente.setActionCommand("SIGUIENTE");
         btnMenu.setActionCommand("MENU");
+        btnActividad.setActionCommand("ACTIVIDAD");
+        btnResultados.setActionCommand("RESULTADOS");
+        btnOpcion1.setActionCommand("OPCION1");
+        btnOpcion2.setActionCommand("OPCION2");
+        btnOpcion3.setActionCommand("OPCION3");
         
-        //btnAnterior.addActionListener(listener);//lo mismo, aun no existe
+        btnAnterior.addActionListener(listener);//lo mismo, aun no existe
         btnSiguiente.addActionListener(listener);
         btnMenu.addActionListener(listener);
+        btnActividad.addActionListener(listener);
+        btnResultados.addActionListener(listener);
+        btnOpcion1.addActionListener(listener);
+        btnOpcion2.addActionListener(listener);
+        btnOpcion3.addActionListener(listener);
     }
-    
-    public void mostrarPagina(String titulo, String contenido)
+    //modo lectura
+    public void mostrarPagina(String titulo, String contenido, String ejemplo)
     {
         lblSubtitulo.setText(titulo);
+        lblPregunta.setText("¿Que es y como funciona?");
         jTextArea1.setText(contenido);
+        jTextArea2.setText(ejemplo);
+        pnlEjemplo.setVisible(true);
+        mostrarOpciones(false);
+    }
+    
+    public void mostrarPregunta(String numero, String enunciado, String[] opciones)
+    {
+        lblSubtitulo.setText("Actividad");
+        lblPregunta.setText(numero);
+        jTextArea1.setText(enunciado+"\n\n"
+        +"1. "+opciones[0]+"\n"
+        +"2. "+opciones[1]+"\n"
+        +"3. "+opciones[2]+"\n");
+        pnlEjemplo.setVisible(false);
+        mostrarOpciones(true);
+    }
+    
+    public void mostrarTexto(String titulo, String texto)
+    {
+        lblSubtitulo.setText(titulo);
+        lblPregunta.setText("");
+        jTextArea1.setText(texto);
+        pnlEjemplo.setVisible(false);
+        mostrarOpciones(false);
+    }
+    
+    public void mostrarOpciones(boolean visible)
+    {
+        btnOpcion1.setVisible(visible);
+        btnOpcion2.setVisible(visible);
+        btnOpcion3.setVisible(visible);
     }
     
     public void mostrarMensaje(String mensaje)
@@ -312,9 +442,15 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActividad;
     private javax.swing.JButton btnAnterior;
     private javax.swing.JButton btnMenu;
+    private javax.swing.JButton btnOpcion1;
+    private javax.swing.JButton btnOpcion2;
+    private javax.swing.JButton btnOpcion3;
+    private javax.swing.JButton btnResultados;
     private javax.swing.JButton btnSiguiente;
+    private javax.swing.JButton btnSiguiente1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;

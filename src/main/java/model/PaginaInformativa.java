@@ -9,9 +9,12 @@ package model;
  * @author aaron
  */
 public class PaginaInformativa extends Pagina{
+    
+    private String ejemplo;
 
-    public PaginaInformativa(String titulo, String contenido, int numPagina) {
+    public PaginaInformativa(String titulo, String contenido, int numPagina, String ejemplo) {
         super(titulo, contenido, numPagina);
+        this.ejemplo = ejemplo;
     }
     
     
@@ -20,5 +23,13 @@ public class PaginaInformativa extends Pagina{
         return getContenido()+ "\n(Página "+getNumPagina()+")";
         
     }
+    
+    @Override
+    public String getEjemplo()
+    {
+        return ejemplo;
+    }
+    
+    
   
 }

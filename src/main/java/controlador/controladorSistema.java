@@ -38,6 +38,7 @@ public class controladorSistema implements ActionListener
        {
            case "INICIAR":
                abrirVentanaLectura();
+               vistaMenu.dispose();
                break;
                
            case "SALIR":
@@ -54,11 +55,44 @@ public class controladorSistema implements ActionListener
        Elemento libro = new Elemento();
        libro.agregarPag(new PaginaInformativa("Estructura if",
        "La estructura if ejecuta un bloque solo cuando una condicion es verdadera"
-       + "Java evalua la condicion entre parentesis y, si es true, ejecuta las instrucciones dentro de las llave", 1));
+       + "Java evalua la condicion entre parentesis y, si es true, ejecuta las instrucciones dentro de las llave", 1,
+       "int edad = 20;\n"
+       +"if (edad >= 18)\n"
+       +"{\n"
+       +"   System.out.println(\"Es mayor de edad\");\n"
+       +"}"));
+       
+       
        libro.agregarPag(new PaginaInformativa("Estructura if-else",
-       "La estructura if-else ofrece dos caminos: uno si la condicion es verdadera y otro si es falsa", 2));
+       "La estructura if-else ofrece dos caminos: uno si la condicion es verdadera y otro si es falsa", 2,
+       "int edad = 15;\n"
+       +"if (edad >=18)\n"
+       +"{\n"
+       +"   System.out.println(\"Es mayor de edad\");\n"
+       +"}\n"
+       +"else\n"
+       +"{\n"
+       +"   System.out.println(\"Es menor de edad\");\n"
+       +"}"));
+       
+       
        libro.agregarPag(new PaginaInformativa("Estructura switch",
-       "La estructura switch compara una variable contra varios casos y ejecuta el que coindice", 3));
+       "La estructura switch compara una variable contra varios casos y ejecuta el que coindice", 3,
+       "int dia = 3;\n"
+       +"switch (dia)\n"
+       +"{\n"
+       +"   case 1:\n"
+       +        "System.out.println(\"Lunes\");\n"
+       +        "break;\n"
+       +    "case 2:\n"
+       +        "System.out.println(\"Martes\");\n"
+       +        "break;\n"
+       +    "case 3:\n"
+       +        "System.out.println(\"Miercoles\");\n"
+       +        "break;\n"
+       +    "default:\n"
+       +        "System.out.println(\"Dia no valido\");\n"
+       +"}"));
        
        Preguntas[] preguntas = {
     new Preguntas("¿Cuándo se ejecuta el bloque de un if?",
