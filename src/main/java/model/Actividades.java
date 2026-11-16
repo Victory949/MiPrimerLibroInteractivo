@@ -30,7 +30,7 @@ public class Actividades {
     }
     
     //FIN INTENTO
-    public void finIntento(int[] respuestas)
+    public int finIntento(int[] respuestas) //se cambio el void a int porque se quito el JOption
     {
         for(int i =0; i<3;i++)
         {
@@ -38,7 +38,7 @@ public class Actividades {
         }
         
         intentosRealizados++;
-        JOptionPane.showMessageDialog(null,calcRespuestasCorrectas(respuestas));
+        return calcRespuestasCorrectas(respuestas);
     }
     
     //CALCULO DE PREGUNTAS CORRECTAS
@@ -56,9 +56,9 @@ public class Actividades {
     }
     
     //OBTENER INTENTO
-    public void obtenerIntento(int numIntento)
+    public int[] obtenerIntento(int numIntento)
     {
-        JOptionPane.showMessageDialog(null, historial[numIntento]);
+        return historial[numIntento];
     }
     
     //GET

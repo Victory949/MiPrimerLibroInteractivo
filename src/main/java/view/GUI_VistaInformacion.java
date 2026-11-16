@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -53,11 +55,13 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         btnMenu.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         btnMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnMenu.setText("Volver Menu");
+        btnMenu.addActionListener(this::btnMenuActionPerformed);
 
         btnSiguiente.setBackground(new java.awt.Color(102, 102, 255));
         btnSiguiente.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         btnSiguiente.setForeground(new java.awt.Color(255, 255, 255));
         btnSiguiente.setText("Siguiente");
+        btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
 
         javax.swing.GroupLayout pnlNavegaciónLayout = new javax.swing.GroupLayout(pnlNavegación);
         pnlNavegación.setLayout(pnlNavegaciónLayout);
@@ -238,6 +242,14 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSiguienteActionPerformed
+
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -261,6 +273,28 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new GUI_VistaInformacion().setVisible(true));
+    }
+    
+    public void addLecturaListener(ActionListener listener)
+    {
+        //btnAnterior.setActionCommand("ANTERIOR");//el boton aun no existe en la interfas pero creare el comando para despues
+        btnSiguiente.setActionCommand("SIGUIENTE");
+        btnMenu.setActionCommand("MENU");
+        
+        //btnAnterior.addActionListener(listener);//lo mismo, aun no existe
+        btnSiguiente.addActionListener(listener);
+        btnMenu.addActionListener(listener);
+    }
+    
+    public void mostrarPagina(String titulo, String contenido)
+    {
+        lblSubtitulo.setText(titulo);
+        jTextArea1.setText(contenido);
+    }
+    
+    public void mostrarMensaje(String mensaje)
+    {
+        JOptionPane.showMessageDialog(null, mensaje);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

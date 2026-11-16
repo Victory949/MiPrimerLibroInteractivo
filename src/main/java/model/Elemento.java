@@ -22,27 +22,29 @@ public class Elemento {
         paginas.add(p);
     }
     
+    
+    //quite el JOption y el void de los metodos ya que tiraban error
     //MOSTRAR PAGINA
-    public void mostrarPagina(int posicion)
+    public Pagina mostrarPagina(int posicion)
     {
-        JOptionPane.showMessageDialog(null, paginas.get(posicion));
+        return paginas.get(posicion);
     }
     
     //CANTITDAD PAGINAS
-    public void mostrarCantidad()
+    public int mostrarCantidad()
     {
-        JOptionPane.showMessageDialog(null,paginas.size());
+        return paginas.size();
     }
     
     //ADMINISTRAR PAGINAS
-    public void recorrerPaginas()
+    public String recorrerPaginas()
     {
         String indice = "";
         for (Pagina p : paginas)
         {
             indice= indice+" - "+p.getTitulo()+"\n";
         }
-        JOptionPane.showMessageDialog(null,indice);
+        return indice;
     }
 
 }

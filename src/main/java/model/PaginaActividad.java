@@ -16,9 +16,9 @@ public class PaginaActividad extends Pagina{
     private Preguntas[] preguntas;
     
 
-    public PaginaActividad(String titulo, String contenido, int numPagina) {
+    public PaginaActividad(String titulo, String contenido, int numPagina, Preguntas[] preguntas) {
         super(titulo, contenido, numPagina);
-        this.preguntas=preguntas;
+        this.preguntas = preguntas;
     }
     
     public Preguntas[] getPreguntas()
