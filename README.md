@@ -4,6 +4,7 @@ minilibro interactivo educativo desarrollado en Java con swing, para el curso TM
 de programacion (Universidad de Costa Rica, Sede del Pacifico), II Semestre 2026 - area 4
 
 ------------Tema del libro-------------
+
 Estructuras de control condicionales en Java. El libro explica, con una descripcion breve
 y un ejemplo de codigo en cada pagina:
 
