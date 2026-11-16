@@ -62,6 +62,14 @@ public class controladorLibro implements ActionListener
                 responder(3);
                 break;
                 
+            case "ACTIVIDAD":
+                irAPagina(libro.mostrarCantidad() -1);
+                break;
+                
+            case "RESULTADOS":
+                mostrarResultados();
+                break;
+                
             case "MENU":
                 vista.dispose();
                 sistema.mostrarMenu();
@@ -96,6 +104,13 @@ public class controladorLibro implements ActionListener
     
     private void IniciarIntento()
     {
+        if(!actividad.intentos())
+        {
+            intentoEnCurso = false;
+            vista.mostrarTexto("Actividad",
+                    "Ya realizaste los 3 intentos permitidos. Pulsa 'Resultados' para ver tu historial");
+            return;
+        }
         respuestasUsuario = new int[3];
         preguntaActual = 0;
         intentoEnCurso = true;
@@ -144,6 +159,33 @@ public class controladorLibro implements ActionListener
                 "Respuestas correctas "+aciertos + " de "+preguntas.length+".\n\n"
         + "Pulsa 'Actividades' para otro intento (maximo 3"
         +" o 'Resultados' para ver tu historial.");
+    }
+    
+    private void mostrarResultados()
+    {
+        intentoEnCurso = false;
+        String texto = "";
+        
+        try
+        {
+            for (int i = 0; i < actividad.getIntentosRealizados(); i++)
+            {
+                int[] intento = actividad.obtenerIntento(i);
+                texto += "intento "+(i+1)+" respuestas "+intento[0]+", "
+                        + intento[1]+", "+intento[2]
+                        +" -> aciertos -> "+actividad.calcRespuestasCorrectas(intento)+"\n";
+            }
+        }
+        catch (ArrayIndexOutOfBoundsException ex)
+        {
+            texto = "El intento consultado no existe";
+        }
+        
+        if(texto.isEmpty())
+        {
+            texto = "Todavia no has realizado intentos";
+        }
+        vista.mostrarTexto("Resultados", texto);
     }
         
     
