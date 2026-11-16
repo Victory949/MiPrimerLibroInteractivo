@@ -151,7 +151,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="Libro interactivo educativo para aprender y practicar estructuras de &#xa;control de flujo en Java de manera clara, visual y progresiva."/>
+                <Property name="text" type="java.lang.String" value="Libro interactivo educativo para aprender y practicar estructuras de &#xa;control de flujo en Java de manera clara, visual y progresiva.&#xa;&#xa;Gerald amador&#xa;Victory Hidalgo&#xa;Evan Alvarado"/>
               </Properties>
             </Component>
           </SubComponents>

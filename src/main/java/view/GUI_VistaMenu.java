@@ -71,7 +71,7 @@ public class GUI_VistaMenu extends javax.swing.JFrame {
         jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
-        jTextArea1.setText("Libro interactivo educativo para aprender y practicar estructuras de \ncontrol de flujo en Java de manera clara, visual y progresiva.");
+        jTextArea1.setText("Libro interactivo educativo para aprender y practicar estructuras de \ncontrol de flujo en Java de manera clara, visual y progresiva.\n\nGerald amador\nVictory Hidalgo\nEvan Alvarado");
         jScrollPane1.setViewportView(jTextArea1);
 
         pnlFondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 410, 70));

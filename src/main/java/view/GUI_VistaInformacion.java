@@ -51,7 +51,6 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         lblPregunta = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        btnSiguiente1 = new javax.swing.JButton();
         btnOpcion1 = new javax.swing.JButton();
         btnOpcion3 = new javax.swing.JButton();
         btnOpcion2 = new javax.swing.JButton();
@@ -228,12 +227,6 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnSiguiente1.setBackground(new java.awt.Color(0, 153, 204));
-        btnSiguiente1.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
-        btnSiguiente1.setForeground(new java.awt.Color(255, 255, 255));
-        btnSiguiente1.setText("Siguiente");
-        btnSiguiente1.addActionListener(this::btnSiguiente1ActionPerformed);
-
         btnOpcion1.setBackground(new java.awt.Color(0, 153, 204));
         btnOpcion1.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         btnOpcion1.setForeground(new java.awt.Color(255, 255, 255));
@@ -257,20 +250,15 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
         pnlContenidoLayout.setHorizontalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlContenidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnOpcion1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                    .addComponent(btnOpcion2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnOpcion3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlContenidoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnOpcion1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnOpcion3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnOpcion2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pnlEjemplo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pnlExplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnlContenidoLayout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(btnSiguiente1)))
+                    .addComponent(pnlEjemplo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlExplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlContenidoLayout.setVerticalGroup(
@@ -286,12 +274,11 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
                         .addComponent(btnOpcion2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnOpcion3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlContenidoLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pnlEjemplo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(btnSiguiente1))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -335,10 +322,6 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
     private void btnResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnResultadosActionPerformed
-
-    private void btnSiguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSiguiente1ActionPerformed
 
     private void btnOpcion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcion1ActionPerformed
         // TODO add your handling code here:
@@ -450,7 +433,6 @@ public class GUI_VistaInformacion extends javax.swing.JFrame {
     private javax.swing.JButton btnOpcion3;
     private javax.swing.JButton btnResultados;
     private javax.swing.JButton btnSiguiente;
-    private javax.swing.JButton btnSiguiente1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
